@@ -9,6 +9,7 @@ Một công ty cần lập một API cho trang web bán hàng của họ. Thông
 - product_price (product_id, price_date_time, price, note)
 
   <h2>CSDL</h2>
+  
   ![image](https://github.com/TrietKun/www_tuan2/assets/103935961/28466bfc-398f-484f-bad5-4357930a6531)
 
 <h2>Chức năng</h2>

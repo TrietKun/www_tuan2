@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Giỏ hàng</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 20px;
+        }
+
+        table {
+            border-collapse: collapse;
+            width: 100%;
+            margin-top: 20px;
+        }
+
+        th, td {
+            border: 1px solid #ddd;
+            padding: 12px;
+            text-align: left;
+        }
+
+        th {
+            background-color: #f2f2f2;
+        }
+
+        button {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            cursor: pointer;
+            font-size: 16px;
+            border-radius: 5px;
+        }
+
+        button:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+<h1>Giỏ hàng</h1>
+
+<table>
+    <thead>
+    <tr>
+        <th>ID</th>
+        <th>Tên Mặt Hàng</th>
+        <th>Giá</th>
+        <th>Xóa Khỏi Giỏ</th>
+    </tr>
+    </thead>
+    <tbody id="cartItems">
+    </tbody>
+</table>
+
+<button onclick="checkout()">Thanh Toán</button>
+
+<script>
+    var cart = [
+        { id: 1, name: "Sản phẩm 1", price: 100 },
+        // Add other items as needed
+    ];
+
+    function displayCart() {
+        var cartItems = document.getElementById("cartItems");
+
+        cartItems.innerHTML = "";
+
+        for (var i = 0; i < cart.length; i++) {
+            var item = cart[i];
+            var row = document.createElement("tr");
+
+            var idCell = document.createElement("td");
+            idCell.textContent = item.id;
+            row.appendChild(idCell);
+
+            var nameCell = document.createElement("td");
+            nameCell.textContent = item.name;
+            row.appendChild(nameCell);
+
+            var priceCell = document.createElement("td");
+            priceCell.textContent = "$" + item.price;
+            row.appendChild(priceCell);
+
+            var deleteCell = document.createElement("td");
+            var deleteButton = document.createElement("button");
+            deleteButton.textContent = "Xóa";
+            deleteButton.addEventListener("click", function () {
+            });
+            deleteCell.appendChild(deleteButton);
+            row.appendChild(deleteCell);
+
+            cartItems.appendChild(row);
+        }
+    }
+
+    function checkout() {
+        alert("Đã thanh toán. Cảm ơn bạn!");
+    }
+
+    displayCart();
+</script>
+</body>
+</html>
